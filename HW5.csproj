@@ -1,0 +1,1038 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{C11E59B6-0812-434E-8B4D-338FFFA44970}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>HW5</RootNamespace>
+    <AssemblyName>HW5</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="frmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLogin.Designer.cs">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMain.Designer.cs">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMedia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMedia.Designer.cs">
+      <DependentUpon>frmMedia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmRegister.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRegister.Designer.cs">
+      <DependentUpon>frmRegister.cs</DependentUpon>
+    </Compile>
+    <Compile Include="globals.cs" />
+    <Compile Include="LondonCity\frmCsvExportSites.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LondonCity\frmCsvExportSites.Designer.cs">
+      <DependentUpon>frmCsvExportSites.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LondonCity\frmCsvImportSiteUpdate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LondonCity\frmCsvImportSiteUpdate.Designer.cs">
+      <DependentUpon>frmCsvImportSiteUpdate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reports\BadTicket%28Q5%29.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\BadTicket%28Q5%29.Designer.cs">
+      <DependentUpon>BadTicket%28Q5%29.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\frmLastYearTraffic.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\frmLastYearTraffic.Designer.cs">
+      <DependentUpon>frmLastYearTraffic.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\frmMostActiveUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\frmMostActiveUser.Designer.cs">
+      <DependentUpon>frmMostActiveUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\MostActive%28Q4%29.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\MostActive%28Q4%29.Designer.cs">
+      <DependentUpon>MostActive%28Q4%29.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\PrimStations%28Q3%29.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\PrimStations%28Q3%29.Designer.cs">
+      <DependentUpon>PrimStations%28Q3%29.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\RemoteSites%28Q1%29.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\RemoteSites%28Q1%29.Designer.cs">
+      <DependentUpon>RemoteSites%28Q1%29.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\ShowDeposit%28Q7%29.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\ShowDeposit%28Q7%29.Designer.cs">
+      <DependentUpon>ShowDeposit%28Q7%29.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\UnusedTicket%28Q2%29.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\UnusedTicket%28Q2%29.Designer.cs">
+      <DependentUpon>UnusedTicket%28Q2%29.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\UsedOyster%28Q6%29.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\UsedOyster%28Q6%29.Designer.cs">
+      <DependentUpon>UsedOyster%28Q6%29.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SQLConnection.cs" />
+    <Compile Include="Tables\tblActivity\frmBoardingAtrain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tables\tblActivity\frmBoardingAtrain.Designer.cs">
+      <DependentUpon>frmBoardingAtrain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tables\tblActivity\frmNewTrainRide.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tables\tblActivity\frmNewTrainRide.Designer.cs">
+      <DependentUpon>frmNewTrainRide.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tables\tblActivity\frmViewTicketsActivity.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tables\tblActivity\frmViewTicketsActivity.Designer.cs">
+      <DependentUpon>frmViewTicketsActivity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tables\tblGeneralParameters\frmAddDepositRate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tables\tblGeneralParameters\frmAddDepositRate.Designer.cs">
+      <DependentUpon>frmAddDepositRate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tables\tblLine\frmAddLine.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tables\tblLine\frmAddLine.Designer.cs">
+      <DependentUpon>frmAddLine.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tables\tblLine\frmFindLine.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tables\tblLine\frmFindLine.Designer.cs">
+      <DependentUpon>frmFindLine.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tables\tblLine\frmRemoveLine.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tables\tblLine\frmRemoveLine.Designer.cs">
+      <DependentUpon>frmRemoveLine.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tables\tblLine\frmUpdateLine.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tables\tblLine\frmUpdateLine.Designer.cs">
+      <DependentUpon>frmUpdateLine.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tables\tblOysterCard\frmNewOyserCard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tables\tblOysterCard\frmNewOyserCard.Designer.cs">
+      <DependentUpon>frmNewOyserCard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tables\tblOysterCard\frmRenewCard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tables\tblOysterCard\frmRenewCard.Designer.cs">
+      <DependentUpon>frmRenewCard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tables\tblOysterCard\frmUpgradeProgram.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tables\tblOysterCard\frmUpgradeProgram.Designer.cs">
+      <DependentUpon>frmUpgradeProgram.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tables\tblOysterCard\ViewPictures.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tables\tblOysterCard\ViewPictures.Designer.cs">
+      <DependentUpon>ViewPictures.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tables\tblPaperCard\frmNewPaperCard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tables\tblPaperCard\frmNewPaperCard.Designer.cs">
+      <DependentUpon>frmNewPaperCard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tables\tblSiteFromExit\frmRemoveSiteFromExit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tables\tblSiteFromExit\frmRemoveSiteFromExit.Designer.cs">
+      <DependentUpon>frmRemoveSiteFromExit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tables\tblSiteFromExit\frmSiteFromExit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tables\tblSiteFromExit\frmSiteFromExit.Designer.cs">
+      <DependentUpon>frmSiteFromExit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tables\tblSiteFromExit\frmUpdateSiteFromExit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tables\tblSiteFromExit\frmUpdateSiteFromExit.Designer.cs">
+      <DependentUpon>frmUpdateSiteFromExit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tables\tblSiteFromExit\frmViewSitesNearSites.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tables\tblSiteFromExit\frmViewSitesNearSites.Designer.cs">
+      <DependentUpon>frmViewSitesNearSites.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tables\tblSiteFromSite\frmViewSiteFromSite.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tables\tblSiteFromSite\frmViewSiteFromSite.Designer.cs">
+      <DependentUpon>frmViewSiteFromSite.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tables\tblSiteFromSite\frmRemoveNearbySites.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tables\tblSiteFromSite\frmRemoveNearbySites.Designer.cs">
+      <DependentUpon>frmRemoveNearbySites.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tables\tblSiteFromSite\frmSiteFromSite.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tables\tblSiteFromSite\frmSiteFromSite.Designer.cs">
+      <DependentUpon>frmSiteFromSite.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tables\tblSiteFromSite\frmUpdetNearbySites.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tables\tblSiteFromSite\frmUpdetNearbySites.Designer.cs">
+      <DependentUpon>frmUpdetNearbySites.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tables\tblSiteType\frmAddSiteType.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tables\tblSiteType\frmAddSiteType.Designer.cs">
+      <DependentUpon>frmAddSiteType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tables\tblSite\frmAddSite.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tables\tblSite\frmAddSite.Designer.cs">
+      <DependentUpon>frmAddSite.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tables\tblSite\frmFindSite.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tables\tblSite\frmFindSite.Designer.cs">
+      <DependentUpon>frmFindSite.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tables\tblSite\frmRemoveSite.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tables\tblSite\frmRemoveSite.Designer.cs">
+      <DependentUpon>frmRemoveSite.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tables\tblSite\frmUpdateSite.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tables\tblSite\frmUpdateSite.Designer.cs">
+      <DependentUpon>frmUpdateSite.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tables\tblStationInLine\frmAddStationToLine.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tables\tblStationInLine\frmAddStationToLine.Designer.cs">
+      <DependentUpon>frmAddStationToLine.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tables\tblStationInLine\frmFindStationLines.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tables\tblStationInLine\frmFindStationLines.Designer.cs">
+      <DependentUpon>frmFindStationLines.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tables\tblStationInLine\frmRemoveStationFromLine.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tables\tblStationInLine\frmRemoveStationFromLine.Designer.cs">
+      <DependentUpon>frmRemoveStationFromLine.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tables\tblStation\frmAddStation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tables\tblStation\frmAddStation.Designer.cs">
+      <DependentUpon>frmAddStation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tables\tblStation\frmFindStations.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tables\tblStation\frmFindStations.Designer.cs">
+      <DependentUpon>frmFindStations.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tables\tblStation\frmRemoveStation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tables\tblStation\frmRemoveStation.Designer.cs">
+      <DependentUpon>frmRemoveStation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tables\tblStation\frmUpdateStation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tables\tblStation\frmUpdateStation.Designer.cs">
+      <DependentUpon>frmUpdateStation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tables\tblStation\frmViewInMap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tables\tblStation\frmViewInMap.Designer.cs">
+      <DependentUpon>frmViewInMap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tables\tblUser\frmAddUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tables\tblUser\frmAddUser.Designer.cs">
+      <DependentUpon>frmAddUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tables\tblUser\frmRemoveUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tables\tblUser\frmRemoveUser.Designer.cs">
+      <DependentUpon>frmRemoveUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tables\tblUser\frmUpdateUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tables\tblUser\frmUpdateUser.Designer.cs">
+      <DependentUpon>frmUpdateUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tables\tblZone\frmAddZone.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tables\tblZone\frmAddZone.Designer.cs">
+      <DependentUpon>frmAddZone.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tables\tblZone\frmRemoveZone.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tables\tblZone\frmRemoveZone.Designer.cs">
+      <DependentUpon>frmRemoveZone.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TFL.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TFL.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="TFL_HW2DataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TFL_HW2DataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="TFL_HW2DataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TFL_HW2DataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="TFL_HW2DataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TFL_HW2DataSet2.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="TFL_HW2DataSet3.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TFL_HW2DataSet3.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Utils\Alerts.cs" />
+    <Compile Include="Utils\BuildTablesDGV.cs" />
+    <Compile Include="Utils\GridViewRefresh.cs" />
+    <Compile Include="Utils\InputValidation.cs" />
+    <Compile Include="Utils\Services.cs" />
+    <EmbeddedResource Include="frmLogin.resx">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMain.resx">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMedia.resx">
+      <DependentUpon>frmMedia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRegister.resx">
+      <DependentUpon>frmRegister.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LondonCity\frmCsvExportSites.resx">
+      <DependentUpon>frmCsvExportSites.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LondonCity\frmCsvImportSiteUpdate.resx">
+      <DependentUpon>frmCsvImportSiteUpdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\BadTicket%28Q5%29.resx">
+      <DependentUpon>BadTicket%28Q5%29.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\frmLastYearTraffic.resx">
+      <DependentUpon>frmLastYearTraffic.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\frmMostActiveUser.resx">
+      <DependentUpon>frmMostActiveUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\MostActive%28Q4%29.resx">
+      <DependentUpon>MostActive%28Q4%29.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\PrimStations%28Q3%29.resx">
+      <DependentUpon>PrimStations%28Q3%29.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\RemoteSites%28Q1%29.resx">
+      <DependentUpon>RemoteSites%28Q1%29.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\ShowDeposit%28Q7%29.resx">
+      <DependentUpon>ShowDeposit%28Q7%29.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\UnusedTicket%28Q2%29.resx">
+      <DependentUpon>UnusedTicket%28Q2%29.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\UsedOyster%28Q6%29.resx">
+      <DependentUpon>UsedOyster%28Q6%29.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tables\tblActivity\frmBoardingAtrain.resx">
+      <DependentUpon>frmBoardingAtrain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tables\tblActivity\frmNewTrainRide.resx">
+      <DependentUpon>frmNewTrainRide.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tables\tblActivity\frmViewTicketsActivity.resx">
+      <DependentUpon>frmViewTicketsActivity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tables\tblGeneralParameters\frmAddDepositRate.resx">
+      <DependentUpon>frmAddDepositRate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tables\tblLine\frmAddLine.resx">
+      <DependentUpon>frmAddLine.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tables\tblLine\frmFindLine.resx">
+      <DependentUpon>frmFindLine.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tables\tblLine\frmRemoveLine.resx">
+      <DependentUpon>frmRemoveLine.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tables\tblLine\frmUpdateLine.resx">
+      <DependentUpon>frmUpdateLine.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tables\tblOysterCard\frmNewOyserCard.resx">
+      <DependentUpon>frmNewOyserCard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tables\tblOysterCard\frmRenewCard.resx">
+      <DependentUpon>frmRenewCard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tables\tblOysterCard\frmUpgradeProgram.resx">
+      <DependentUpon>frmUpgradeProgram.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tables\tblOysterCard\ViewPictures.resx">
+      <DependentUpon>ViewPictures.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tables\tblPaperCard\frmNewPaperCard.resx">
+      <DependentUpon>frmNewPaperCard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tables\tblSiteFromExit\frmRemoveSiteFromExit.resx">
+      <DependentUpon>frmRemoveSiteFromExit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tables\tblSiteFromExit\frmSiteFromExit.resx">
+      <DependentUpon>frmSiteFromExit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tables\tblSiteFromExit\frmUpdateSiteFromExit.resx">
+      <DependentUpon>frmUpdateSiteFromExit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tables\tblSiteFromExit\frmViewSitesNearSites.resx">
+      <DependentUpon>frmViewSitesNearSites.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tables\tblSiteFromSite\frmViewSiteFromSite.resx">
+      <DependentUpon>frmViewSiteFromSite.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tables\tblSiteFromSite\frmRemoveNearbySites.resx">
+      <DependentUpon>frmRemoveNearbySites.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tables\tblSiteFromSite\frmSiteFromSite.resx">
+      <DependentUpon>frmSiteFromSite.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tables\tblSiteFromSite\frmUpdetNearbySites.resx">
+      <DependentUpon>frmUpdetNearbySites.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tables\tblSiteType\frmAddSiteType.resx">
+      <DependentUpon>frmAddSiteType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tables\tblSite\frmAddSite.resx">
+      <DependentUpon>frmAddSite.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tables\tblSite\frmFindSite.resx">
+      <DependentUpon>frmFindSite.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tables\tblSite\frmRemoveSite.resx">
+      <DependentUpon>frmRemoveSite.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tables\tblSite\frmUpdateSite.resx">
+      <DependentUpon>frmUpdateSite.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tables\tblStationInLine\frmAddStationToLine.resx">
+      <DependentUpon>frmAddStationToLine.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tables\tblStationInLine\frmFindStationLines.resx">
+      <DependentUpon>frmFindStationLines.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tables\tblStationInLine\frmRemoveStationFromLine.resx">
+      <DependentUpon>frmRemoveStationFromLine.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tables\tblStation\frmAddStation.resx">
+      <DependentUpon>frmAddStation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tables\tblStation\frmFindStations.resx">
+      <DependentUpon>frmFindStations.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tables\tblStation\frmRemoveStation.resx">
+      <DependentUpon>frmRemoveStation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tables\tblStation\frmUpdateStation.resx">
+      <DependentUpon>frmUpdateStation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tables\tblStation\frmViewInMap.resx">
+      <DependentUpon>frmViewInMap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tables\tblUser\frmAddUser.resx">
+      <DependentUpon>frmAddUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tables\tblUser\frmRemoveUser.resx">
+      <DependentUpon>frmRemoveUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tables\tblUser\frmUpdateUser.resx">
+      <DependentUpon>frmUpdateUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tables\tblZone\frmAddZone.resx">
+      <DependentUpon>frmAddZone.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tables\tblZone\frmRemoveZone.resx">
+      <DependentUpon>frmRemoveZone.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="TFL.dbml.layout">
+      <DependentUpon>TFL.dbml</DependentUpon>
+    </None>
+    <None Include="app.config" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="TFL.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>TFL.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="TFL_HW2DataSet.xsc">
+      <DependentUpon>TFL_HW2DataSet.xsd</DependentUpon>
+    </None>
+    <None Include="TFL_HW2DataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>TFL_HW2DataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="TFL_HW2DataSet.xss">
+      <DependentUpon>TFL_HW2DataSet.xsd</DependentUpon>
+    </None>
+    <None Include="TFL_HW2DataSet1.xsc">
+      <DependentUpon>TFL_HW2DataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="TFL_HW2DataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>TFL_HW2DataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="TFL_HW2DataSet1.xss">
+      <DependentUpon>TFL_HW2DataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="TFL_HW2DataSet2.xsc">
+      <DependentUpon>TFL_HW2DataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="TFL_HW2DataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>TFL_HW2DataSet2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="TFL_HW2DataSet2.xss">
+      <DependentUpon>TFL_HW2DataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="TFL_HW2DataSet3.xsc">
+      <DependentUpon>TFL_HW2DataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="TFL_HW2DataSet3.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>TFL_HW2DataSet3.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="TFL_HW2DataSet3.xss">
+      <DependentUpon>TFL_HW2DataSet3.xsd</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Forms\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Metro_Station_of_Piraeus2.JPG" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0,Profile=Client">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 Client Profile %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TrainLAPorteStation.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\background.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\filtre.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\background1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\images.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Login_Backgrounddd.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\login-pageee.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\login-page.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="AxSHDocVw">
+      <Guid>{EAB22AC0-30C1-11CF-A7EB-0000C05BAE0B}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>1</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>aximp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="AxShockwaveFlashObjects">
+      <Guid>{D27CDB6B-AE6D-11CF-96B8-444553540000}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>aximp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="SHDocVw">
+      <Guid>{EAB22AC0-30C1-11CF-A7EB-0000C05BAE0B}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>1</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="ShockwaveFlashObjects">
+      <Guid>{D27CDB6B-AE6D-11CF-96B8-444553540000}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icontrain.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user_logout-icon.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\500px-Crystal_Clear_action_exit.svg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Trash.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\railroad___wallpaper___by_veggiefriend.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Rail-Road-HD.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\yellow-sky-sun-train-track-wallpaper-hd-wallpapers-high-track-wallpaper-.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\graywallpaper2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\graywallpaper1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\RegisterNowButton-DarkGrey.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\railroad-tracks-and-train-in-motion-example-of-diagonal-leading-lines-in-photography.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Chrysanthemum.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Desert.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Hydrangeas.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Jellyfish.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Koala.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Lighthouse.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Penguins.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Tulips.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1063731-vintage.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Big_Ben_and_the_sky_photography__by_paweldomaradzki.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\big-ben-and-beautiful-black-Favim.com-491424.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\2jb0c3d.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\10703-640x360-oyster12ns.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\10703-640x360-oyster12ns1.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Flexible_Ticketing_cover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\The London Eye has been named as the world%27s best tourist attraction in a new survey..jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\background-n800.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BGshow.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Anonymous-London---Westminster-Bridge-Bus-416493.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\359494.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\apple_pay_london_underground_thumb800.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\0_1f30_3ec5344a_XL.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\141017113107-ntfl-exterior-outdoor-dawn-021014-horizontal-large-gallery.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\menu strip.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user12.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user13.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\main.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\foiextract20130709-29816-1t7nsha-0-12_1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\userremove.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\userINFO.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\4.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ChooChoo-Train-Wallpaper.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\empty_train_seat_by_spacebus-d4qia38.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Train_Seating.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ntfl-doors-open.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Brookwood_railway_station_1923024_672def29.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Brookwood_672def29.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\83325-200.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Very-Basic-Folder-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\database.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\report.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Custom-Icon-Design-Mono-General-2-Import.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sections-of-Website-About-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\הורד.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pay_card_hand-512.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\126148-matte-white-square-icon-transport-travel-transportation-train4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\toy_train_icon_black_white_line_art_christmas_xmas_electronics_peace_symbol_sign_coloring_book_colouring_black_white_line_art_bw-1979px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\10703-640x360-oyster12ns2.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\railroad-clipart3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\castles.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\User-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\7-512.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\remove_user.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\import-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\export-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Play_Video-512.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Trash_Can-128.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add_list.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\search-icon-md.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\674025-sync_synchronize-512.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\google-location-icon-location-map-512.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\train_station-512.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\19263-200.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bank_cards.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\הורד.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon_pm.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon_pm1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Edinburgh_castle_symbol.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\beaches.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\22-512.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\location-pin-512.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\File_Unknown-512.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\grey_new_seo-05-512.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\refresh2-512.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\germany-road-trip-planner-one-way-rental.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\package_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Photo Video Film2.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\14.jpg" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

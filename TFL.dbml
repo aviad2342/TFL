@@ -1,0 +1,188 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="TFL_HW2" Class="TFLDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=AVIAD-PC\SQLEXPRESS;Initial Catalog=TFL_HW2;Integrated Security=True" SettingsObjectName="HW5.Properties.Settings" SettingsPropertyName="TFL_HW2ConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.tblActivity" Member="tblActivities">
+    <Type Name="tblActivity">
+      <Column Name="cardNumber" Type="System.Int64" DbType="BigInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="cardPurchaseDate" Type="System.DateTime" DbType="SmallDateTime NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="activityDate" Type="System.DateTime" DbType="SmallDateTime NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="activityType" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
+      <Column Name="stationID" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="lineName" Type="System.String" DbType="VarChar(15) NOT NULL" CanBeNull="false" />
+      <Association Name="tblCard_tblActivity" Member="tblCard" ThisKey="cardNumber,cardPurchaseDate" OtherKey="number,purchaseDate" Type="tblCard" IsForeignKey="true" />
+      <Association Name="tblLine_tblActivity" Member="tblLine" ThisKey="lineName" OtherKey="name" Type="tblLine" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+      <Association Name="tblStation_tblActivity" Member="tblStation" ThisKey="stationID" OtherKey="ID" Type="tblStation" IsForeignKey="true" />
+      <Association Name="tblStationInLine_tblActivity" Member="tblStationInLine" ThisKey="stationID,lineName" OtherKey="stationID,lineName" Type="tblStationInLine" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblCard" Member="tblCards">
+    <Type Name="tblCard">
+      <Column Name="number" Type="System.Int64" DbType="BigInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="purchaseDate" Type="System.DateTime" DbType="SmallDateTime NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="tblCard_tblActivity" Member="tblActivities" ThisKey="number,purchaseDate" OtherKey="cardNumber,cardPurchaseDate" Type="tblActivity" />
+      <Association Name="tblCard_tblOysterCard" Member="tblOysterCard" ThisKey="number,purchaseDate" OtherKey="number,purchaseDate" Type="tblOysterCard" Cardinality="One" />
+      <Association Name="tblCard_tblPaperCard" Member="tblPaperCard" ThisKey="number,purchaseDate" OtherKey="number,purchaseDate" Type="tblPaperCard" Cardinality="One" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblCardLengths" Member="tblCardLengths">
+    <Type Name="tblCardLength">
+      <Column Name="cardLength" Type="System.Char" DbType="Char(1) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="lengthDescription" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Association Name="tblCardLength_tblOysterCardArea" Member="tblOysterCardAreas" ThisKey="cardLength" OtherKey="cardLength" Type="tblOysterCardArea" />
+      <Association Name="tblCardLength_tblPaperCardArea" Member="tblPaperCardAreas" ThisKey="cardLength" OtherKey="cardLength" Type="tblPaperCardArea" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblGeneralParameters" Member="tblGeneralParameters">
+    <Type Name="tblGeneralParameter">
+      <Column Name="depositStartYear" Type="System.Int16" DbType="SmallInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="depositEndYear" Type="System.Int16" DbType="SmallInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="price" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblLine" Member="tblLines">
+    <Type Name="tblLine">
+      <Column Name="name" Type="System.String" DbType="VarChar(15) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="foundedYear" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="lineType" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="lineLength" Type="System.Single" DbType="Real" CanBeNull="true" />
+      <Association Name="tblLine_tblActivity" Member="tblActivities" ThisKey="name" OtherKey="lineName" Type="tblActivity" />
+      <Association Name="tblLine_tblLineColor" Member="tblLineColors" ThisKey="name" OtherKey="lineName" Type="tblLineColor" />
+      <Association Name="tblLine_tblSiteFromExit" Member="tblSiteFromExits" ThisKey="name" OtherKey="lineName" Type="tblSiteFromExit" />
+      <Association Name="tblLine_tblStationInLine" Member="tblStationInLines" ThisKey="name" OtherKey="lineName" Type="tblStationInLine" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblLineColor" Member="tblLineColors">
+    <Type Name="tblLineColor">
+      <Column Name="name" Type="System.String" DbType="VarChar(15) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="lineName" Type="System.String" DbType="VarChar(15) NOT NULL" CanBeNull="false" />
+      <Association Name="tblLine_tblLineColor" Member="tblLine" ThisKey="lineName" OtherKey="name" Type="tblLine" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblOysterCard" Member="tblOysterCards">
+    <Type Name="tblOysterCard">
+      <Column Name="number" Type="System.Int64" DbType="BigInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="purchaseDate" Type="System.DateTime" DbType="SmallDateTime NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="picture" Type="System.Data.Linq.Binary" DbType="Image" CanBeNull="true" UpdateCheck="Never" />
+      <Association Name="tblOysterCard_tblOysterCardArea" Member="tblOysterCardAreas" ThisKey="number,purchaseDate" OtherKey="cardNumber,cardPurchaseDate" Type="tblOysterCardArea" />
+      <Association Name="tblCard_tblOysterCard" Member="tblCard" ThisKey="number,purchaseDate" OtherKey="number,purchaseDate" Type="tblCard" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblOysterCardAreas" Member="tblOysterCardAreas">
+    <Type Name="tblOysterCardArea">
+      <Column Name="cardNumber" Type="System.Int64" DbType="BigInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="cardPurchaseDate" Type="System.DateTime" DbType="SmallDateTime NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="zoneNumber" Type="System.Char" DbType="Char(1) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="cardLength" Type="System.Char" DbType="Char(1) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="tblCardLength_tblOysterCardArea" Member="tblCardLength" ThisKey="cardLength" OtherKey="cardLength" Type="tblCardLength" IsForeignKey="true" />
+      <Association Name="tblOysterCard_tblOysterCardArea" Member="tblOysterCard" ThisKey="cardNumber,cardPurchaseDate" OtherKey="number,purchaseDate" Type="tblOysterCard" IsForeignKey="true" />
+      <Association Name="tblZone_tblOysterCardArea" Member="tblZone" ThisKey="zoneNumber" OtherKey="number" Type="tblZone" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblPaperCard" Member="tblPaperCards">
+    <Type Name="tblPaperCard">
+      <Column Name="number" Type="System.Int64" DbType="BigInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="purchaseDate" Type="System.DateTime" DbType="SmallDateTime NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="isTourist" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="tblPaperCard_tblPaperCardArea" Member="tblPaperCardAreas" ThisKey="number,purchaseDate" OtherKey="cardNumber,cardPurchaseDate" Type="tblPaperCardArea" />
+      <Association Name="tblCard_tblPaperCard" Member="tblCard" ThisKey="number,purchaseDate" OtherKey="number,purchaseDate" Type="tblCard" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblPaperCardAreas" Member="tblPaperCardAreas">
+    <Type Name="tblPaperCardArea">
+      <Column Name="cardNumber" Type="System.Int64" DbType="BigInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="cardPurchaseDate" Type="System.DateTime" DbType="SmallDateTime NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="zoneNumber" Type="System.Char" DbType="Char(1) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="cardLength" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
+      <Association Name="tblCardLength_tblPaperCardArea" Member="tblCardLength" ThisKey="cardLength" OtherKey="cardLength" Type="tblCardLength" IsForeignKey="true" />
+      <Association Name="tblPaperCard_tblPaperCardArea" Member="tblPaperCard" ThisKey="cardNumber,cardPurchaseDate" OtherKey="number,purchaseDate" Type="tblPaperCard" IsForeignKey="true" />
+      <Association Name="tblZone_tblPaperCardArea" Member="tblZone" ThisKey="zoneNumber" OtherKey="number" Type="tblZone" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblSite" Member="tblSites">
+    <Type Name="tblSite">
+      <Column Name="ID" Type="System.Int16" DbType="SmallInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="name" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="siteDescription" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="foundedYear" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="siteType" Type="System.String" DbType="VarChar(15) NOT NULL" CanBeNull="false" />
+      <Association Name="tblSite_tblSiteFromExit" Member="tblSiteFromExits" ThisKey="ID" OtherKey="siteID" Type="tblSiteFromExit" />
+      <Association Name="tblSite_tblSiteFromSite" Member="tblSiteFromSites" ThisKey="ID" OtherKey="siteID1" Type="tblSiteFromSite" />
+      <Association Name="tblSite_tblSiteFromSite1" Member="tblSiteFromSites1" ThisKey="ID" OtherKey="siteID2" Type="tblSiteFromSite" />
+      <Association Name="tblSiteType_tblSite" Member="tblSiteType" ThisKey="siteType" OtherKey="siteType" Type="tblSiteType" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblSiteFromExit" Member="tblSiteFromExits">
+    <Type Name="tblSiteFromExit">
+      <Column Name="siteID" Type="System.Int16" DbType="SmallInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="stationID" Type="System.Int16" DbType="SmallInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="lineName" Type="System.String" DbType="VarChar(15) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="distance" Type="System.Single" DbType="Real" CanBeNull="true" />
+      <Association Name="tblLine_tblSiteFromExit" Member="tblLine" ThisKey="lineName" OtherKey="name" Type="tblLine" IsForeignKey="true" />
+      <Association Name="tblSite_tblSiteFromExit" Member="tblSite" ThisKey="siteID" OtherKey="ID" Type="tblSite" IsForeignKey="true" />
+      <Association Name="tblStation_tblSiteFromExit" Member="tblStation" ThisKey="stationID" OtherKey="ID" Type="tblStation" IsForeignKey="true" />
+      <Association Name="tblStationInLine_tblSiteFromExit" Member="tblStationInLine" ThisKey="stationID,lineName" OtherKey="stationID,lineName" Type="tblStationInLine" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblSiteType" Member="tblSiteTypes">
+    <Type Name="tblSiteType">
+      <Column Name="siteType" Type="System.String" DbType="VarChar(15) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="tblSiteType_tblSite" Member="tblSites" ThisKey="siteType" OtherKey="siteType" Type="tblSite" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblStation" Member="tblStations">
+    <Type Name="tblStation">
+      <Column Name="ID" Type="System.Int16" DbType="SmallInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="name" Type="System.String" DbType="VarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="platformNum" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="kiosk" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="zoneNumber" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Association Name="tblStation_tblActivity" Member="tblActivities" ThisKey="ID" OtherKey="stationID" Type="tblActivity" />
+      <Association Name="tblStation_tblSiteFromExit" Member="tblSiteFromExits" ThisKey="ID" OtherKey="stationID" Type="tblSiteFromExit" />
+      <Association Name="tblStation_tblStationInLine" Member="tblStationInLines" ThisKey="ID" OtherKey="stationID" Type="tblStationInLine" />
+      <Association Name="tblZone_tblStation" Member="tblZone" ThisKey="zoneNumber" OtherKey="number" Type="tblZone" IsForeignKey="true" DeleteRule="CASCADE" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblStationInLine" Member="tblStationInLines">
+    <Type Name="tblStationInLine">
+      <Column Name="stationID" Type="System.Int16" DbType="SmallInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="lineName" Type="System.String" DbType="VarChar(15) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="tblStationInLine_tblActivity" Member="tblActivities" ThisKey="stationID,lineName" OtherKey="stationID,lineName" Type="tblActivity" />
+      <Association Name="tblStationInLine_tblSiteFromExit" Member="tblSiteFromExits" ThisKey="stationID,lineName" OtherKey="stationID,lineName" Type="tblSiteFromExit" />
+      <Association Name="tblLine_tblStationInLine" Member="tblLine" ThisKey="lineName" OtherKey="name" Type="tblLine" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+      <Association Name="tblStation_tblStationInLine" Member="tblStation" ThisKey="stationID" OtherKey="ID" Type="tblStation" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblUser" Member="tblUsers">
+    <Type Name="tblUser">
+      <Column Name="UserId" Type="System.String" DbType="VarChar(30) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="UserPassword" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="FirstName" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="LastName" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="UserType" Type="System.String" DbType="VarChar(5) NOT NULL" CanBeNull="false" />
+      <Association Name="tblUser_tblUserLog" Member="tblUserLogs" ThisKey="UserId" OtherKey="UserID" Type="tblUserLog" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblUserLog" Member="tblUserLogs">
+    <Type Name="tblUserLog">
+      <Column Name="UserID" Type="System.String" DbType="VarChar(30) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="LogDate" Type="System.DateTime" DbType="SmallDateTime NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="tblUser_tblUserLog" Member="tblUser" ThisKey="UserID" OtherKey="UserId" Type="tblUser" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblZone" Member="tblZones">
+    <Type Name="tblZone">
+      <Column Name="number" Type="System.Char" DbType="Char(1) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="tblZone_tblOysterCardArea" Member="tblOysterCardAreas" ThisKey="number" OtherKey="zoneNumber" Type="tblOysterCardArea" />
+      <Association Name="tblZone_tblPaperCardArea" Member="tblPaperCardAreas" ThisKey="number" OtherKey="zoneNumber" Type="tblPaperCardArea" />
+      <Association Name="tblZone_tblStation" Member="tblStations" ThisKey="number" OtherKey="zoneNumber" Type="tblStation" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblSiteFromSite" Member="tblSiteFromSites">
+    <Type Name="tblSiteFromSite">
+      <Column Name="siteID1" Type="System.Int16" DbType="SmallInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="siteID2" Type="System.Int16" DbType="SmallInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="distance" Type="System.Single" DbType="Real" CanBeNull="true" />
+      <Association Name="tblSite_tblSiteFromSite" Member="tblSite" ThisKey="siteID1" OtherKey="ID" Type="tblSite" IsForeignKey="true" />
+      <Association Name="tblSite_tblSiteFromSite1" Member="tblSite1" ThisKey="siteID2" OtherKey="ID" Type="tblSite" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>
